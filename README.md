@@ -10,7 +10,6 @@ A Spring Boot microservice that implements identity reconciliation for e-commerc
 - [Getting Started](#getting-started)
 - [API Documentation](#api-documentation)
 - [Database Schema](#database-schema)
-- [Business Logic](#business-logic)
 - [Testing](#testing)
 - [Deployment](#deployment)
 - [Examples](#examples)
