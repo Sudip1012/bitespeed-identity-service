@@ -123,14 +123,6 @@ Identity Reconciliation Service is running
 | updated_at | TIMESTAMP | Last update timestamp |
 | deleted_at | TIMESTAMP | Soft delete timestamp |
 
-## Business Logic
-
-### Contact Linking Rules
-
-1. **New Contact**: If no existing contact matches, create new primary contact
-2. **Partial Match**: If request matches existing contact but has new info, create secondary contact
-3. **Exact Match**: If exact combination exists, return consolidated contact
-4. **Multiple Primaries**: If email and phone match different primary contacts, merge them (oldest becomes primary)
 
 ### Examples
 
