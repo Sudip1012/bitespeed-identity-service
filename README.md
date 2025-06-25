@@ -32,8 +32,7 @@ The Identity Reconciliation Service helps e-commerce platforms like FluxKart.com
 - **Java 17**
 - **Spring Boot 3.2.0**
 - **Spring Data JPA**
-- **H2 Database** (development)
-- **PostgreSQL** (production ready)
+- **H2 Database**
 - **Maven**
 
 ## Getting Started
@@ -61,15 +60,8 @@ mvn clean compile
 mvn spring-boot:run
 ```
 
-The application will start on `http://localhost:8080`
+The application will start on `https://bitespeed-identity-service-wtr6.onrender.com`
 
-### Development Database
-
-The application uses H2 in-memory database for development. You can access the H2 console at:
-- URL: `http://localhost:8080/h2-console`
-- JDBC URL: `jdbc:h2:mem:identity_db`
-- Username: `sa`
-- Password: (empty)
 
 ## API Documentation
 
@@ -206,53 +198,23 @@ curl -X POST http://localhost:8080/identify \
   -d '{"email": "lorraine@hillvalley.edu"}'
 ```
 
-### Running Unit Tests
 
-```bash
-mvn test
-```
 
 ## Deployment
 
-### Local Deployment
+## 🚀 Live Demo
 
-```bash
-mvn clean package
-java -jar target/identity-reconciliation-0.0.1-SNAPSHOT.jar
-```
+**POST** [`/identify`](https://identity-reconciliation.onrender.com/identify)
 
-### Production Deployment
+> Replace the base URL with your actual Render deployment URL once hosted.
 
-1. **Database Setup**: Configure PostgreSQL database
-2. **Environment Variables**: Set production database credentials
-3. **Application Properties**: Update `application.properties` for production
-4. **Build**: Create production JAR
-```bash
-mvn clean package -Pprod
-```
+### ✅ Sample Request:
 
-### Docker Deployment
-
-Create `Dockerfile`:
-```dockerfile
-FROM openjdk:17-jdk-slim
-COPY target/identity-reconciliation-0.0.1-SNAPSHOT.jar app.jar
-EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "/app.jar"]
-```
-
-Build and run:
-```bash
-docker build -t identity-reconciliation .
-docker run -p 8080:8080 identity-reconciliation
-```
-
-### Cloud Deployment Options
-
-- **Render.com**: Connect GitHub repository for automatic deployments
-- **Heroku**: Use Heroku Postgres add-on
-- **AWS**: Deploy on Elastic Beanstalk with RDS
-- **Google Cloud**: Deploy on App Engine with Cloud SQL
+```json
+{
+  "email": "lorraine@hillvalley.edu",
+  "phoneNumber": "123456"
+}
 
 ## Production Configuration
 
