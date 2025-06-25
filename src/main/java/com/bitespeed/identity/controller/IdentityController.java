@@ -26,7 +26,7 @@ public class IdentityController {
         }
     }
     
-    @GetMapping("/health")
+    @GetMapping("/")
     public ResponseEntity<String> health() {
         return ResponseEntity.ok("Identity Reconciliation Service is running");
     }
